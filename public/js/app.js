@@ -2,7 +2,8 @@ let app = new Vue({
   el: '#timeline',
 
   data: {
-    post: ''
+    post: '',
+    posts: []
   },
 
   methods: {
@@ -16,8 +17,9 @@ let app = new Vue({
         data: {
           'body': this.post
         }
-      }).success(function() {
+      }).success(function(data) {
         this.post = '';
+        this.posts.unshift(data)
       }.bind(this));
     }
   }

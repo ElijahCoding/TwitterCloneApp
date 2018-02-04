@@ -21,15 +21,15 @@
 
         <div class="col-md-8">
             <div class="posts">
-              <div class="media">
+              <div class="media" v-for="post in posts" track-by="id">
                 <div class="media-left">
                   <img class="media-object" src="" />
                 </div>
                 <div class="media-body">
                   <div class="user">
-                    <a href="#"><strong>Alex</strong></a>
+                    <a href="#"><strong>@{{post.user.name}}</strong></a>
                   </div>
-                  <p>bla blabl </p>
+                  <p>@{{post.body}}</p>
                 </div>
               </div>
             </div>
