@@ -25,8 +25,13 @@ class User extends Authenticatable
     ];
 
     protected $appends = [
-      'avatar'
+      'avatar', 'profileUrl'
     ];
+
+    public function getRouteKeyName()
+    {
+      return 'name';
+    }
 
     public function posts()
     {
@@ -36,6 +41,11 @@ class User extends Authenticatable
     public function getAvatar()
     {
         return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=45&d=mm';
+    }
+
+    public function getProfileUrlAttribute()
+    {
+      return route('user.index', $this);
     }
 
     public function getAvatarAttribute()

@@ -28,9 +28,8 @@
                 </div>
                 <div class="media-body">
                   <div class="user">
-                    <a href="#">
-                      <strong>@{{post.user.name}}
-                      </strong>
+                    <a href="@{{ post.user.profileUrl }}">
+                      <strong>@{{ post.user.name }}</strong>
                     </a>  - @{{ post.humanCreatedAt }}
                   </div>
                   <p>@{{post.body}}</p>
